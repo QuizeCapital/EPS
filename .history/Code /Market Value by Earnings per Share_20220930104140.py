@@ -116,6 +116,5 @@ EPS_file=mark.combiningEPSMarketValue\
   ('/Users/adamszequi/Desktop/Clones/EPS/data/Test Company Tickers , Earnings Per Share , Avg Percentage Change Dataframe.txt',
      '/Users/adamszequi/Desktop/Clones/EPS/data/Test Companies.csv')
 
-print('Table of Market Value divided into Quintiles - Contents represent Average EPS of quintile portfolio')
-print('----------------------------------------------------------------------------------------------------')
+print('Table of Market Value divided into Quintiles - Contents represent Average E')
 print(EPS_file.to_markdown())
