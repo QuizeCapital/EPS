@@ -117,3 +117,5 @@ EPS_file=mark.combiningEPSMarketValue\
      '/Users/adamszequi/Desktop/Clones/EPS/data/Test Companies.csv')
 
 print(EPS_file.to_markdown())
+
+#print(mark.grouped_marketcap_tickers())

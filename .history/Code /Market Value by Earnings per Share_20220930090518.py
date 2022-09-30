@@ -114,6 +114,8 @@ mark = AnnualEPS()
 #print(data)
 EPS_file=mark.combiningEPSMarketValue\
   ('/Users/adamszequi/Desktop/Clones/EPS/data/Test Company Tickers , Earnings Per Share , Avg Percentage Change Dataframe.txt',
-     '/Users/adamszequi/Desktop/Clones/EPS/data/Test Companies.csv')
+     '/Users/adamszequi/SmartFactor/Smart-Factor-Research-Files-5/Market Value by Earnings Per Share/Datasets/Test Companies.csv')
 
 print(EPS_file.to_markdown())
+
+#print(mark.grouped_marketcap_tickers())
