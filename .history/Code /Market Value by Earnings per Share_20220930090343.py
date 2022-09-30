@@ -116,6 +116,6 @@ EPS_file=mark.combiningEPSMarketValue\
   ('/Users/adamszequi/SmartFactor/Smart-Factor-Research-Files-5/Market Value by Earnings Per Share/Datasets/Test Company Tickers , Earnings Per Share , Avg Percentage Change Dataframe.txt',
      '/Users/adamszequi/SmartFactor/Smart-Factor-Research-Files-5/Market Value by Earnings Per Share/Datasets/Test Companies.csv')
 
-print(EPS_file.to_markdown())
+print(EPS_file.to)
 
 #print(mark.grouped_marketcap_tickers())
