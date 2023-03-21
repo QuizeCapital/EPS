@@ -86,21 +86,25 @@ class AnnualEPS():
 
                 splitByMarketValue= np.array_split(grouped, 5)
                 split_sorted = [dataframe.sort_values('avgPctChange', ascending=False) for dataframe in splitByMarketValue]
-                split_sorted_split = sum([np.array_split(dataframe, 5) for dataframe in split_sorted],[])
-                
-                list_of_limit_markCaps = ['>'+str("{:,}".format(df['MarketCap'].iloc[-1])) for df in splitByMarketValue]
+                split_sorted_split = sum(
+                    (np.array_split(dataframe, 5) for dataframe in split_sorted), [])
+
+                list_of_limit_markCaps = [
+                    '>' + "{:,}".format(df['MarketCap'].iloc[-1])
+                    for df in splitByMarketValue
+                ]
                 list_of_avg = pd.DataFrame(np.array([cap['avgPctChange'].mean() for cap in split_sorted_split]).reshape(5,5),index=list_of_limit_markCaps)
-                
+
                 list_of_avg = list_of_avg.assign(Range=list_of_avg.values.max(1)-list_of_avg.values.min(1))
                 list_of_avg['Average'] = list_of_avg.mean(axis=1)
                 list_of_avg.loc['Average'] = list_of_avg.mean()
-                
+
                 # marketCapGroupedTickers = [[num, list(split_sorted_split[num]['Ticker'])]
                 #         for num in range(len(split_sorted_split))]
-                
+
                 marketCapGroupedTickers = [{num: list(split_sorted_split[num]['Ticker'])} for num in range(len(split_sorted_split))]
-                        
-                
+
+
                 # with open('/Users/adamszequi/SmartFactor/Smart-Factor-Research-Files-5/Market Value by Earnings Per Share/Datasets/marketCapGroupedTickersFile.txt', 'w') as file:
                 #     file.write(json.dumps(marketCapGroupedTickers))
 
